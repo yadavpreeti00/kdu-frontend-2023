@@ -1,0 +1,37 @@
+@mixin header {
+  background-color: #ff7f51;
+  padding: 0.1em;
+  h2 {
+    padding-left: 4.9em;
+    color: white;
+    font-size: 1.5em;
+  }
+}
+@mixin navbar {
+  position: sticky;
+  top: 0em;
+  background-color: #333333;
+  padding-left: 5.5em;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0.8em;
+    display: flex;
+  }
+  li a {
+    color: white;
+    padding: 1em;
+    font-size: 1.2em;
+    text-decoration: none;
+  }
+}
+@mixin body {
+  margin: 0;
+  padding: 0;
+}
+@mixin footer {
+  background-color: #333333;
+  color: #f4f4f4;
+  padding: 0.2em;
+  text-align: center;
+}
