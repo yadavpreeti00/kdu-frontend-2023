@@ -17,7 +17,7 @@ for (let key in ansObject) {
   }
 }
 
-console.log("JSON Object from given String is : ");
+console.log("\nJSON Object from given String is : ");
 console.log(ansObject);
 
 let ansString = JSON.stringify(ansObject, (key, value) => {
@@ -27,5 +27,5 @@ let ansString = JSON.stringify(ansObject, (key, value) => {
   return value;
 });
 
-console.log("String from json object is : ");
+console.log("\nString from json object is : ");
 console.log(ansString);

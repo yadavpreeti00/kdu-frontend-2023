@@ -1,7 +1,6 @@
-console.log("Question -2 - a");
+console.log("\n Question -2 - a\n");
 
 const stringArray = [
-  1,
   "   Monday  ",
   "  Tuesday",
   "Wednesday  ",
@@ -22,7 +21,7 @@ let ansArray = stringArray.map(capitalize);
 
 console.log(ansArray);
 
-console.log("Question -2 - b");
+console.log("\nQuestion -2 - b\n");
 
 const testString1 = "javascript is cool ";
 const testString2 = "programming is fun";
@@ -41,9 +40,11 @@ function convertToCodedString(string) {
     console.log("invalid input string");
     return;
   }
-  string.trim();
+  string = string.trim();
   string = string.replace(/[aeios]/g, (m) => chars[m]);
   return string;
 }
 
 console.log(convertToCodedString(testString1));
+console.log(convertToCodedString(testString2));
+console.log(convertToCodedString(testString3));

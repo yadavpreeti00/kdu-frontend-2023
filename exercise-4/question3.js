@@ -1,4 +1,4 @@
-console.log("Question -3");
+console.log("Question -3\n");
 
 let shoes = [
   { type: "sneakers", color: "white", size: 7, price: 80000 },
@@ -53,8 +53,11 @@ let totalWorth = calculateTotalPrice();
 
 let blueProducts = getBlueProducts();
 
-console.log("Total worth of products shown in the warehouse: ", totalWorth);
+console.log(
+  "Total worth of products shown in the warehouse: ",
+  totalWorth + "\n"
+);
 
 console.log("Warehouse with decreasing price of products: ", warehouse);
 
-console.log("Blue color products of warehouse: ", blueProducts);
+console.log("\nBlue color products of warehouse: ", blueProducts);
