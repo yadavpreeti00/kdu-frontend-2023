@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  padding: 0;
+.heading {
+  margin-top: 0;
+  padding: 1em;
+  color: #fff;
+  background-color: #cd853f;
+  text-align: center;
+  font-size: 2em;
+}
+
+#calculator {
+    margin-left: 38em;
+    margin-top: 6em;
+    width: 20em;
+    text-align: center;
+  }
+  
+  #output {
+    background-color: #dddddd;
+    height: 2em;
+    font-size: 2em;
+    line-height: 2em;
+    width: 9em;
+  }
+  
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    margin: 1em ;
+    }
+  
+  button {
+    background-color: #dddddd;
+    width: 14em;
+    height: 3em;
+    font-size: 1.5em;
+    border: none;
+    outline: none;
+    margin: 0 4%;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #cccccc;
+  }
+  
+  .operator {
+    background-color:  #ec8d2f;
+    color: #ffffff;
+  }
+  
+  .operator:hover {
+    background-color:#cd853f;
+  }
+  
+  .number {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .number:hover {
+    background-color: #dddddd;
+  }
+}
