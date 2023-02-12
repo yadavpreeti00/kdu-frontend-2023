@@ -25,7 +25,7 @@ function addTask() {
   editTask.addEventListener(
     "click",
     function (e) {
-      var newInput = prompt("Enter new task:", input);
+      var newInput = prompt("Edit Your Task:", input);
       if (newInput !== null) {
         textnode.nodeValue = newInput;
       }

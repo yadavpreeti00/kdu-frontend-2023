@@ -1,3 +1,7 @@
+
+//run the code once the DOM has finished loading
+document.addEventListener("DOMContentLoaded", function() {
+
 const buttons = document.querySelectorAll(".number,.operator");
 const display = document.querySelector("#output");
 const clear = document.querySelector(".clear");
@@ -5,6 +9,8 @@ let firstValue = "";
 let secondValue = "";
 let operator = "";
 
+
+//event listener for numbers and operators
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     let value = e.target.innerText;
@@ -59,9 +65,11 @@ buttons.forEach((button) => {
   });
 });
 
+//clear button
 clear.addEventListener("click", () => {
   firstValue = "";
   secondValue = "";
   operator = "";
   display.innerText = "0";
+});
 });
