@@ -1,0 +1,25 @@
+.header {
+  background-color: #28a745;
+  display: flex;
+  align-items: center;
+  padding: 0.5%;
+  gap: 40%;
+
+  .heading {
+    font-size: 40px;
+    color: #fff;
+    margin-left: 10%;
+    padding: 1px;
+  }
+  .search-box {
+    outline: none;
+    width: 30%;
+    padding: 4px 4px;
+    border-radius: 3px;
+    border: solid;
+    border-color: #fff;
+  }
+  .search-box:focus{
+    outline:none;
+  }
+}

@@ -1,0 +1,22 @@
+.form {
+  padding: 2px;
+  .heading {
+    padding: 6px 0px;
+    font-size: 32px;
+    text-decoration: bold;
+  }
+  .input-field {
+    width: 15%;
+    padding: 10px 2px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .submit-btn {
+    margin-left: 0.5%;
+    color: #fff;
+    background-color: #000;
+    border-radius: 4px;
+    padding: 7px 10px;
+    font-size: 16px;
+  }
+}
