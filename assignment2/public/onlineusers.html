@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>ChatCord App</title>
+</head>
+
+<body>
+
+
+  <main class="chat-main">
+
+    <div class="chat-sidebar">
+
+      <div>
+        <button class="btn" id="post" type="submit">Post</button>
+      </div>
+
+      <div>
+        <button class="btn" id="currently-online" type="submit">Currently Online</button>
+      </div>
+
+      <h3><i class="fas fa-user"></i> Current Username:</h3>
+      <h2 id="room-name"></h2>
+
+      <h3><i class="fas fa-users"></i> Users</h3>
+      <ul id="users-online"></ul>
+    </div>
+
+
+    <div class="chat-container">
+
+      <div class="chat-messages">
+        <!-- <div class="message">
+            <p class="meta">Brad<span>9:12pm</span></p>
+            <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil repellat, sunt pariatur esse facere illo modi minima non consectetur, labore quisquam quis doloremque. Possimus, omnis dolore! Pariatur placeat dolorem nam?</p>
+          </div> -->
+      </div>
+
+      <div class="chat-form-container">
+        <form id="chat-form">
+          <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" />
+          <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+        </form>
+      </div>
+    </div>
+ 
+
+  <div class="post-main">
+
+    <div class="post-sidebar">
+
+    </div>
+    <div class="post-container">
+      <div class="post-messages">
+        <!-- <div class="post">
+          <p class="title-text">Title<span>9:12pm</span></p>
+          <p class="description-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil repellat, sunt pariatur esse facere illo modi minima non consectetur, labore quisquam quis doloremque. Possimus, omnis dolore! Pariatur placeat dolorem nam?</p>
+        </div> -->
+      </div>
+      
+      <div class="post-form-container">
+        <form id="post-form">
+          <input id="title" type="text" placeholder="Post Title" required autocomplete="off" />
+          <input id="description" type="text" placeholder="Post Description" required autocomplete="off" />
+
+          <button class="btn"><i class="fas fa-paper-plane"></i>Post</button>
+        </form>
+      </div>
+
+      
+    </div>
+  </div>
+</main>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.0/qs.min.js"
+    integrity="sha512-/l6vieC+YxaZywUhmqs++8uF9DeMvJE61ua5g+UK0TuHZ4TkTgB1Gm1n0NiA86uEOM9JJ6JUwyR0hboKO0fCng=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+    integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4=" crossorigin="anonymous"></script>
+  <script src="socket.io/socket.io.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
