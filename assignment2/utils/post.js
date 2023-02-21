@@ -1,7 +1,6 @@
 const moment=require('moment');
-function formatPostMessage(username,title,description){
+function formatPostMessage(title,description){
    return{
-    username,
     title,
     description,
     time:moment().format('h:mm a')
