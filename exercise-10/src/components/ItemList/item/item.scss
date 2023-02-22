@@ -1,0 +1,24 @@
+.item-grid {
+  padding: 4em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 4em;
+
+  .item-container {
+    border-radius: 0.5em;
+    border-style: solid;
+    border-color: #ccc;
+    padding: 1em;
+    .item-img {
+      img {
+        border-radius: 0.5em;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .item-season,
+    .item-price {
+      margin-top: 10px;
+    }
+  }
+}
