@@ -1,0 +1,29 @@
+.heading {
+    text-align: center;
+    font-size: 4em;
+}
+.product-detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+  .product-img {
+    flex: 0 0 50%;
+    
+    .image {
+      padding: 2em;
+      width: 50%;
+      height: 50%;
+    }
+  }
+  .product-description {
+    flex: 1 1 50%;
+    .description {
+      font-size:0.5em;
+    }
+    button {
+      margin-top: 20px;
+    }
+  }
+}
