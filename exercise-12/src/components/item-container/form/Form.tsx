@@ -1,24 +1,27 @@
-import './Form.scss';
-import React from 'react';
+import "./Form.scss";
+import React, { useContext } from "react";
+import ItemContext from "../../../context/ItemContext";
 
-
-interface FormProps {
-  onFormSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
-  onInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+interface ItemContextType {
   inputValue: string;
+  setInputValue: React.Dispatch<React.SetStateAction<string>>;
+  todoList: string[];
+  handleFormSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+  handleDelete: (index: number) => void;
 }
 
-/**
-Form component that allows users to add new items to the item list
-@param onFormSubmit Function to handle form submission
-@param onInputChange Function to handle changes in the input field
-@param inputValue The current value of the input field
-@returns A form that allows users to add new items to the item list
-*/
-function Form({ onFormSubmit, onInputChange, inputValue }: FormProps) {
+function Form() {
+  const itemContext = useContext<ItemContextType>(ItemContext);
+
+  const { inputValue, setInputValue, handleFormSubmit } = itemContext;
+
+  const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+  };
+
   return (
     <div>
-      <form onSubmit={onFormSubmit} className="form">
+      <form onSubmit={handleFormSubmit} className="form">
         <div className="heading">Add Items</div>
         <input
           type="text"

@@ -11,6 +11,8 @@ type ItemContextProviderProps = React.PropsWithChildren<{}>;
 function ItemContextProvider(props: ItemContextProviderProps) {
   const [inputValue, setInputValue] = useState("");
   const [todoList, setTodoList] = useState<string[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -28,6 +30,13 @@ function ItemContextProvider(props: ItemContextProviderProps) {
     updatedList.splice(index, 1);
     setTodoList(updatedList);
   };
+  const handleSearchTermChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const term = event.target.value;
+    setSearchTerm(term);
+   // props.onSearchTerm(term);
+  };
 
   const contextValue = {
     inputValue,
@@ -35,6 +44,9 @@ function ItemContextProvider(props: ItemContextProviderProps) {
     todoList,
     handleFormSubmit,
     handleDelete,
+    handleSearchTermChange,
+    setSearchTerm,
+    searchTerm
   };
 
   return (
