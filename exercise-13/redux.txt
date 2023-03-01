@@ -1,0 +1,27 @@
+if we have a state unique to a component only , no need to manage that im redux , we can useUse state in t hat com only
+
+
+1. createStore / configurestore (use this),
+  combineStore,
+
+
+2. provide to app using provider and pass store 
+
+useSelector to access the redux store functions -> for subscribing (whenever there is change , component gets rerendered)
+useDispatch
+
+Store with reducer(cntains all reducers names in combine reducer) , provied to app 
+reducer -> contains the actual function (state[always previous state],action)
+(prevState=initial state,action)-> as there is no prev state at first time
+
+reducer function needs action , can be triggered using dispatcher and reducer is triggered
+
+/redux 
+    -/
+
+
+
+
+
+Redux Toolkit
+slice -> directly create reducer without writing switch case n all
