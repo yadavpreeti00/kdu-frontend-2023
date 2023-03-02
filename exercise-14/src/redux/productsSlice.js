@@ -28,7 +28,6 @@ const productsSlice = createSlice({
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.products = action.payload;
         state.status = "success";
-        console.log(state.products)
       })
       .addCase(fetchProducts.pending, (state, action) => {
         state.status = "pending";
