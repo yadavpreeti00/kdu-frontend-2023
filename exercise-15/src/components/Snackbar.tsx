@@ -1,7 +1,6 @@
-import { useSelector } from "react-redux";
-import { RootState } from "../redux/reduxStore";
+
 import React, { useEffect, useState } from "react";
-import "../scss/Snackbar.scss";
+import "../scss/Snackbar";
 
 interface SnackbarProps {
     status: string;
