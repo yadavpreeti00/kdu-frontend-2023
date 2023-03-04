@@ -7,10 +7,13 @@ export default function AllProductsList(): JSX.Element {
   const allProducts = useSelector(
     (state: RootState) => state.categoryProducts.products
   );
+  const status=useSelector((state: RootState) => state.categoryProducts.status);
 
   const searchText = useSelector((state: RootState) => state.search.searchText);
 
-  return (
+  return status === "pending" ? (
+    <div className="loader"></div>
+  ) : (
     <div className="product-list">
       {allProducts.map((product) => (
         <div key={product.categoryName}>

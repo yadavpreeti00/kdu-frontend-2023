@@ -13,7 +13,6 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchCategories());
-    console.log("categories loaded");
   }, [dispatch]);
   return (
     <div className="App">
