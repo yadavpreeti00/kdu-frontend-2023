@@ -1,0 +1,14 @@
+.product-list{
+    background-color: #f4f7f9;
+    display: grid;
+    place-items: center;
+  }
+  .product-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    list-style: none;
+    padding: 2em;
+    
+  }
+  
