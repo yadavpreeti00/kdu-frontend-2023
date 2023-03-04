@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import "../scss/Snackbar";
+import "../scss/Snackbar.scss";
 
 interface SnackbarProps {
     status: string;
