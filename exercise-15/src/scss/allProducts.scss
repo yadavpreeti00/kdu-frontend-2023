@@ -1,0 +1,11 @@
+.product-list{
+    display: grid;
+    .product-list-items{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        place-items: center;
+        gap : 4rem;
+        margin: 2rem;
+    }
+    place-items: center;
+}
