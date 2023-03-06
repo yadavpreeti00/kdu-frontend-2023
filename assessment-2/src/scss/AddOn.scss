@@ -1,0 +1,18 @@
+@import "./mixin-constants.scss";
+
+.add-on {
+  .heading {
+    @include heading;
+  }
+  .select-add-on {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 4em;
+    padding: 2em 1em 1em 0em;
+    .add-on-component {
+      background-color: transparent;
+      padding: 1em;
+      border-color: $light-grey-color;
+    }
+  }
+}

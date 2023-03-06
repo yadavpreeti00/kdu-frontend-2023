@@ -1,0 +1,27 @@
+@import "./mixin-constants.scss";
+
+.date-container {
+  .heading {
+    @include heading;
+  }
+  .select-date-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1em;
+    justify-content: start;
+    width: 36em;
+    gap: 1em;
+    .start-date {
+      .start-date-input {
+        padding: 1em;
+        width: 16em;
+      }
+    }
+    .end-date {
+      .end-date-input {
+        padding: 1em;
+        width: 16em;
+      }
+    }
+  }
+}

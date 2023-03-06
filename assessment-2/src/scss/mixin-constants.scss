@@ -1,0 +1,13 @@
+$primary-color: #f48c5c;
+$white-color: #fff;
+$light-grey-color:#ccc;
+
+
+@mixin heading {
+  color: $white-color;
+  background-color: $primary-color;
+  padding: 1em;
+  text-align: left;
+  font-size: 1.2em;
+  font-weight: bold;
+}
