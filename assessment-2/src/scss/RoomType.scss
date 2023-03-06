@@ -1,0 +1,27 @@
+@import "./mixin-constants.scss";
+
+.room-type-container {
+    
+    margin-bottom: 2em;
+    
+
+  .heading {
+    @include heading;
+  }
+  .select-room-container {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 4em;
+    padding: 2em 1em 1em 0em;
+
+    .room-type {
+        padding: 1em;
+        border: 0.08em solid $light-grey-color;
+      .room-type-button {
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
+}
