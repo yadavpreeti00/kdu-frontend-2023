@@ -1,13 +1,11 @@
 import { AnyAction, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import formSlice from "./formSlice";
-import bookingSlice from "./formSlice";
 import roomSlice from "./roomSlice";
 
 
 const reduxStore = configureStore({
   reducer: {
     rooms : roomSlice,
-    bookings : bookingSlice,
     form: formSlice
   },
 });

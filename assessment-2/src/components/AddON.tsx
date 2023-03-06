@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import '../scss/AddOn.scss';
+import { AppDispatch} from "../redux/reduxStore";
 
 interface AddOn {
   name: string;
