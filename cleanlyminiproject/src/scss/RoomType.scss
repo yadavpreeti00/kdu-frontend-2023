@@ -1,0 +1,48 @@
+@import "./mixin-constants.scss";
+
+.room-type-container {
+  padding: 2em;
+
+  .room-type-heading {
+    @include heading-with-margin;
+  }
+  .room-types {
+    padding: 2em 0em 1em 0em;
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap: 2em;
+
+    .room-type-card {
+      border: 0.1em solid $light-grey-color;
+      border-radius: 0.5em;
+      align-items: center;
+      text-align: center;
+      .card-image {
+        padding: 1em;
+        width: 40%;
+        height: 50%;
+      }
+      .card-name {
+      }
+      .card-quantity {
+        padding: 1em 0 0 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        .quantity-add {
+        }
+        .quantity-subtract {
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+
+  .room-types {
+    padding: 2em 0em 1em 0em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 2em;
+  }
+
+}

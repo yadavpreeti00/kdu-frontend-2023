@@ -1,0 +1,26 @@
+.snackbar {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    z-index: 999;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+
+    &.success {
+      background-color: #28a745;
+    }
+
+    &.rejected {
+      background-color: #dc3545;
+    }
+
+    &.hide {
+      opacity: 0;
+    }
+  }

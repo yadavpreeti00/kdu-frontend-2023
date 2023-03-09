@@ -1,0 +1,30 @@
+@import "./mixin-constants.scss";
+
+.time-slot-container {
+  padding: 2em;
+  .time-slot-heading {
+    @include heading;
+  }
+  .time-slot-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1em 0 1em 0;
+    gap: 1em;
+    text-align: center;
+    .time-slot-item {
+      padding: 1em;
+      border-radius: 0.5em;
+      border: 0.1em solid $light-grey-color;
+      color: $light-black-color;
+      background: transparent;
+    }
+    .time-slot-item.active {
+      border-color: $primary-color;
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  .time-slot-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr !important;
+  }
+}

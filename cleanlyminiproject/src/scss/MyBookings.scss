@@ -1,0 +1,33 @@
+@import './mixin-constants.scss';
+
+.table{
+  padding: 1em;
+  width: 100vw;
+}
+.MuiDataGrid-columnHeader {
+  background-color: $primary-color;
+}
+
+.MuiDataGrid-columnHeaderTitle {
+
+  font-weight: bold;
+  color: $white-color;
+  font-size: 1.2em;
+
+}
+
+.MuiDataGrid-row {
+  background-color: $white-color;
+  .MuiDataGrid-cell {
+    color: $light-black-color;
+    
+    
+  }
+  &:hover {
+    background-color: $background-color;
+  }
+}
+
+.MuiDataGrid-footerContainer {
+  background-color: $white-color;
+}
