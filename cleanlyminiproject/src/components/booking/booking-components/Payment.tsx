@@ -193,7 +193,6 @@ export default function PaymentForm() {
                 ? "complete-booking selected"
                 : "complete-booking"
             }
-            disabled={checkAllRequiredFields()}
             onClick={() => handleSubmit()}
           >
             Complete Booking
