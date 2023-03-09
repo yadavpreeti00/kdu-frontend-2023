@@ -3,7 +3,7 @@ import bookingSlice from "./bookingSlice";
 import cleaningFrequenciesSlice from "./cleaningFrequenciesSlice";
 import cleaningTypesSlice from "./cleaningTypesSlice";
 import extrasSlice from "./extrasSlice";
-import getBookingSlice, { getBookingData } from "./getDataFromDB/getBookingSlice";
+import getBookingSlice from "./getDataFromDB/getBookingSlice";
 import postBookingDataSlice from "./postDataToDB/postBookingDataSlice";
 import priceSlice from "./priceSlice";
 import roomTypesSlice from "./roomTypesSlice";
@@ -15,13 +15,11 @@ const reduxStore = configureStore({
     cleaningFrequencies: cleaningFrequenciesSlice,
     roomTypes: roomTypesSlice,
     timeSlots: timeSlotsSlice,
-    extras : extrasSlice,
+    extras: extrasSlice,
     booking: bookingSlice,
-    price:priceSlice,
-    postBookingData : postBookingDataSlice,
-    getBookedData:getBookingSlice
-    
-    
+    price: priceSlice,
+    postBookingData: postBookingDataSlice,
+    getBookedData: getBookingSlice,
   },
 });
 

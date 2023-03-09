@@ -1,34 +1,5 @@
 @import "mixin-constants.scss";
 
-// .header {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr ;
-//   justify-content: space-between;
-//   padding: 1em 3em 0 3em;
-//   font-weight: bold;
-//   font-size: 2em;
-//   font-family: Arial, Helvetica, sans-serif;
-
-//   .header-text-1 {
-//     color: $primary-color;
-//     .header-text-2 {
-//       color: $grey-color;
-//     }
-//   }
-//   .header-contact {
-//     justify-self: end;
-//   }
-// }
-
-// @media only screen and (min-device-width: 414px) and (max-device-width: 896px) {
-//   .header {
-//     border-top: 0.1em solid $grey-color;
-//     padding: 0.5em;
-//     font-weight: bold;
-//     font-size: 1.5em;
-//   }
-// }
-
 
 @import './mixin-constants.scss';
 

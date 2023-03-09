@@ -2,26 +2,26 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export interface IBooking {
   booking_id: any;
-  cleaningType: string
+  cleaningType: string;
   cleaningFrequency: string;
   bedRoomCount: number;
   bathRoomCount: number;
   hours: number;
   date: string;
-  startTime: string ;
+  startTime: string;
   price: number;
-  extras: string[] ;
+  extras: string[];
   specialRequirements: string | null;
   personalDetails: {
-    email: string  ;
-    phoneNumber: number | null ;
+    email: string;
+    phoneNumber: number | null;
     address: string;
     pincode: number | null;
   };
 }
 
 const initialState: IBooking = {
-  booking_id:"",
+  booking_id: "",
   cleaningType: "",
   cleaningFrequency: "",
   bedRoomCount: 0,
@@ -34,7 +34,7 @@ const initialState: IBooking = {
   specialRequirements: null,
   personalDetails: {
     email: "",
-    phoneNumber: null ,
+    phoneNumber: null,
     address: "",
     pincode: null,
   },
@@ -69,11 +69,10 @@ export const bookingSlice = createSlice({
       state.date = action.payload;
     },
     setStartTime: (state, action) => {
-      console.log(state.startTime);
       state.startTime = action.payload;
     },
     setPrice: (state, action) => {
-     state.price = action.payload;
+      state.price = action.payload;
     },
     addExtra: (state, action) => {
       state.extras.push(action.payload);
@@ -95,8 +94,7 @@ export const bookingSlice = createSlice({
     },
     setPinCode: (state, action) => {
       state.personalDetails.pincode = action.payload;
-    }
-    
+    },
   },
 });
 

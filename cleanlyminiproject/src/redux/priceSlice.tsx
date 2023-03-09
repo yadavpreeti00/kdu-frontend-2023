@@ -5,11 +5,10 @@ interface IPrice {
   bedRoomPrice: number;
   bathroomPrice: number;
   extrasPrice: number;
-  
 }
 
 const initialState: IPrice = {
-  cleaningTypePrice:0,
+  cleaningTypePrice: 0,
   bedRoomPrice: 0,
   bathroomPrice: 0,
   extrasPrice: 0,
@@ -21,23 +20,18 @@ export const priceSlice = createSlice({
   reducers: {
     setCleaningTypePrice: (state, action) => {
       state.cleaningTypePrice = action.payload;
-      console.log(state.cleaningTypePrice);
     },
     setBedRoomPrice: (state, action) => {
       state.bedRoomPrice = action.payload;
-      console.log(state.bedRoomPrice);
     },
     setBathRoomPrice: (state, action) => {
       state.bedRoomPrice = action.payload;
-      console.log(state.bedRoomPrice);
     },
     addExtrasPrice: (state, action) => {
-        state = {
-            ...state,
-            extrasPrice: action.payload
-          };
-          console.log(state.extrasPrice);
-      
+      state = {
+        ...state,
+        extrasPrice: action.payload,
+      };
     },
   },
 });
@@ -46,8 +40,7 @@ export const {
   setCleaningTypePrice,
   setBedRoomPrice,
   setBathRoomPrice,
-  addExtrasPrice
-  
+  addExtrasPrice,
 } = priceSlice.actions;
 
 export default priceSlice.reducer;

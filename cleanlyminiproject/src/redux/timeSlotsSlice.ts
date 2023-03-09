@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import {axiosInstances} from "../axios/axios";
-
+import { axiosInstances } from "../axios/axios";
 
 const initState = {
   timeSlots: [],
@@ -10,20 +9,16 @@ const initState = {
 //arguments to createAsyncThunk
 //first  is generated prefix for generated action type
 //second is payload creator callback
-export const fetchTimeSlots = createAsyncThunk(
-  "timeSlots/fetch",
-  async () => {
-    const response = await axiosInstances.timeSlotsInstance.get("");
-    return response.data;
-  }
-);
+export const fetchTimeSlots = createAsyncThunk("timeSlots/fetch", async () => {
+  const response = await axiosInstances.timeSlotsInstance.get("");
+  return response.data;
+});
 
 const timeSlotsSlice = createSlice({
   name: "timeSlotsTypes",
   initialState: initState,
-  reducers: {
-  },
-  extraReducers (builder) {
+  reducers: {},
+  extraReducers(builder) {
     builder
       .addCase(fetchTimeSlots.fulfilled, (state, action) => {
         state.timeSlots = action.payload;

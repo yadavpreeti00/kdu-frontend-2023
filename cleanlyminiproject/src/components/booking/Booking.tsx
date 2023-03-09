@@ -3,14 +3,12 @@ import "../../scss/Booking.scss";
 import CleaningFrequency from "./booking-components/CleaningFrequency";
 import CleaningType from "./booking-components/CleaningType";
 import RoomType from "./booking-components/RoomType";
-import { Authenticator } from "@aws-amplify/ui-react";
 import Extras from "./booking-components/Extras";
 import SpecialRequirements from "./booking-components/SpecialRequirements";
 import HoursAndDate from "./booking-components/HoursAndDate";
 import TimeSlot from "./booking-components/TimeSlot";
 import Payment from "./booking-components/Payment";
 import BookingSummary from "./booking-components/BookingSummary";
-import CalculateTotalPrice from "../../utils/CalculatePrice";
 
 export default function Booking(): JSX.Element {
   return (

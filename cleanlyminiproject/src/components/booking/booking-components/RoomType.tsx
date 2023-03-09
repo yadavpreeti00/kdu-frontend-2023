@@ -1,6 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addBathRoomCount, addBedRoomCount, setPrice, subtractBathRoomCount, subtractBedRoomCount } from "../../../redux/bookingSlice";
+import {
+  addBathRoomCount,
+  addBedRoomCount,
+  setPrice,
+  subtractBathRoomCount,
+  subtractBedRoomCount,
+} from "../../../redux/bookingSlice";
 import { setBathRoomPrice, setBedRoomPrice } from "../../../redux/priceSlice";
 import { RootState, AppDispatch } from "../../../redux/reduxStore";
 import "../../../scss/RoomType.scss";
@@ -39,18 +45,25 @@ export default function RoomType(): JSX.Element {
   };
   const handleQuantitySubtract = (roomType: IRoomType) => {
     if (roomType.type === "BEDROOMS") {
-      dispatch(subtractBedRoomCount(bedRoomCount === 0 ? 0 : bedRoomCount - 1))
-      dispatch(setBedRoomPrice(bedRoomCount === 0 ? 0 : (bedRoomCount - 1)*roomType.price));
+      dispatch(subtractBedRoomCount(bedRoomCount === 0 ? 0 : bedRoomCount - 1));
+      dispatch(
+        setBedRoomPrice(
+          bedRoomCount === 0 ? 0 : (bedRoomCount - 1) * roomType.price
+        )
+      );
     } else {
-      dispatch(subtractBathRoomCount(bathRoomCount === 0 ? 0 : bathRoomCount - 1));
-      dispatch(setBathRoomPrice(bathRoomCount === 0 ? 0 : (bathRoomCount - 1)*roomType.price));
+      dispatch(
+        subtractBathRoomCount(bathRoomCount === 0 ? 0 : bathRoomCount - 1)
+      );
+      dispatch(
+        setBathRoomPrice(
+          bathRoomCount === 0 ? 0 : (bathRoomCount - 1) * roomType.price
+        )
+      );
     }
     dispatch(setPrice(CalculateTotalPrice()));
-
-    
   };
 
-  console.log("cleaning type", roomTypes);
 
   return (
     <div className="room-type-container">

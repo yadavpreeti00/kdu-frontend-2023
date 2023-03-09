@@ -16,7 +16,9 @@ export default function TimeSlot(): JSX.Element {
     (state: RootState) => state.timeSlots.timeSlots as ITimeSlot[]
   );
 
-  const selectedTimeSlot = useSelector((state: RootState) => state.booking.startTime);
+  const selectedTimeSlot = useSelector(
+    (state: RootState) => state.booking.startTime
+  );
 
   const handleTimeSlot = (timeSlot: ITimeSlot) => {
     dispatch(setStartTime(timeSlot.time));
@@ -27,8 +29,10 @@ export default function TimeSlot(): JSX.Element {
       <div className="time-slot-heading">When do you like to start?</div>
       <div className="time-slot-grid">
         {timeSlots.map((timeSlot) => (
-          <button 
-            className={`time-slot-item ${timeSlot.time === selectedTimeSlot ? "active" : ""}`}
+          <button
+            className={`time-slot-item ${
+              timeSlot.time === selectedTimeSlot ? "active" : ""
+            }`}
             key={timeSlot.id}
             onClick={() => handleTimeSlot(timeSlot)}
           >

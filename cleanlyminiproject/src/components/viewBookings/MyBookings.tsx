@@ -6,16 +6,21 @@ import Header from "../Header";
 import { useEffect } from "react";
 import { getBookingData } from "../../redux/getDataFromDB/getBookingSlice";
 import { AuthEventData } from "@aws-amplify/ui";
-import '../../scss/MyBookings.scss';
+import "../../scss/MyBookings.scss";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 
 const columns: GridColDef[] = [
-  { field: "id", headerName: "Booking ID", flex: 1,minWidth:200 },
-  { field: "cleaningType", headerName: "Cleaning Type", flex: 1,minWidth:200  },
-  { field: "date", headerName: "Date", width: 150 ,minWidth:150 },
-  { field: "price", headerName: "Bill Amount $", flex: 1 ,minWidth:150 },
-  { field: "address", headerName: "Address", flex: 1 ,minWidth:200 },
+  { field: "id", headerName: "Booking ID", flex: 1, minWidth: 200 },
+  {
+    field: "cleaningType",
+    headerName: "Cleaning Type",
+    flex: 1,
+    minWidth: 200,
+  },
+  { field: "date", headerName: "Date", width: 150, minWidth: 150 },
+  { field: "price", headerName: "Bill Amount $", flex: 1, minWidth: 150 },
+  { field: "address", headerName: "Address", flex: 1, minWidth: 200 },
 ];
 
 type Props = {
@@ -35,6 +40,8 @@ export default function MyBookings({ signOut }: Props): JSX.Element {
   const myBookings = useSelector(
     (state: RootState) => state.getBookedData.bookedData
   );
+  const status = useSelector((state: RootState) => state.getBookedData.status);
+
   const rows = myBookings?.map((booking: any, index) => ({
     id: booking.booking_id,
     cleaningType: booking.booking_data.cleaningType,
@@ -43,8 +50,9 @@ export default function MyBookings({ signOut }: Props): JSX.Element {
     address: booking.booking_data.personalDetails.address,
   }));
 
-  console.log("rows", rows);
-  return (
+  return status === false ? (
+    <div className="loader"></div>
+  ) : (
     <div>
       <div className="my-bookings">
         <Header />
@@ -56,16 +64,15 @@ export default function MyBookings({ signOut }: Props): JSX.Element {
           />
         </div>
         <div className="sign-out-btn-container">
-        <Button
-                onClick={signOut}
-                className="sign-out-btn"
-                endIcon={<SendIcon />}
-              >
-                SignOut
-              </Button>
+          <Button
+            onClick={signOut}
+            className="sign-out-btn"
+            endIcon={<SendIcon />}
+          >
+            SignOut
+          </Button>
         </div>
       </div>
-      
     </div>
   );
 }

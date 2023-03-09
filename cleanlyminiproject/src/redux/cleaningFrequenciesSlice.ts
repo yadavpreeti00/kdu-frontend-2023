@@ -1,15 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import {axiosInstances} from "../axios/axios";
-
+import { axiosInstances } from "../axios/axios";
 
 const initState = {
   cleaningFrequencies: [],
   status: "", // 'pending'|'success'|'rejected'
 };
 
-//arguments to createAsyncThunk
-//first  is generated prefix for generated action type
-//second is payload creator callback
 export const fetchCleaningFrequencies = createAsyncThunk(
   "cleaningFrequencies/fetch",
   async (arg, thunkApi) => {
@@ -21,9 +17,8 @@ export const fetchCleaningFrequencies = createAsyncThunk(
 const cleaningFrequenciesSlice = createSlice({
   name: "cleaningFrequencies",
   initialState: initState,
-  reducers: {
-  },
-  extraReducers (builder) {
+  reducers: {},
+  extraReducers(builder) {
     builder
       .addCase(fetchCleaningFrequencies.fulfilled, (state, action) => {
         state.cleaningFrequencies = action.payload;

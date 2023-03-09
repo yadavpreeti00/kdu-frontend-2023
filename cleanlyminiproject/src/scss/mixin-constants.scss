@@ -4,6 +4,8 @@ $light-grey-color: #ccc;
 $light-black-color: #545c6c;
 $background-color: hwb(180 98% 1%);
 $white-color: #fff;
+$green: #83bd56;
+
 
 $UNIVERSAL-PADDING: 4rem;
 $UNIVERSAL-MARGIN: 4rem;
@@ -13,9 +15,7 @@ $BODY-BACKGROUND-COLOR: #f8fbfc;
 $TEXT-PRIMARY-COLOR: #414b5d;
 $TEXT-SECONDARY-COLOR: #bbc2cc;
 
-$WHITE: #ffffff;
-$GOLD: #f5c36f;
-$GREEN: #83bd56;
+
 
 
 @mixin heading {
