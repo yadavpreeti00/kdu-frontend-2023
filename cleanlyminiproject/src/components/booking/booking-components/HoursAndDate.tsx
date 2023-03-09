@@ -36,9 +36,9 @@ export default function HoursAndDate(): JSX.Element {
                 How many hours?
             </div>
             <div className="schedule-hour-field">
-                <button className="hour-add" onClick={handleAddHours}>+</button>
+                <button className="hour-btn" onClick={handleAddHours}>+</button>
                 <div className="hour-count">{hours}</div>
-                <button className="hour-subtract" onClick={handleSubtractHours}>-</button>
+                <button className="hour-btn" onClick={handleSubtractHours}>-</button>
           </div>
         </div>
         <div className="schedule-date-container">

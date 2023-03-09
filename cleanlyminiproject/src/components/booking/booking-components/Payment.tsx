@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../../../scss/Payment.scss";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
@@ -17,34 +17,39 @@ export default function PaymentForm() {
   const navigate = useNavigate();
   const bookingSummary = useSelector((state: RootState) => state.booking);
 
+  const [termsCheckbox, setTermsCheckbox] = useState(false);
+  const [customCheckbox, setCustomCheckbox] = useState(false);
+
+  const customBookRef = useRef(null);
+  const termsAndConditionsRef = useRef(null);
 
   const checkAllRequiredFields = () => {
-    return (
-      bookingSummary.cleaningType === "" ||
-      bookingSummary.price === 0 ||
-      bookingSummary.hours === 0 ||
-      bookingSummary.startTime === ""
-    );
+    if (bookingSummary.cleaningType === "") {
+      return false;
+    } else if (bookingSummary.price === 0) {
+      return false;
+    } else if (bookingSummary.hours === 0) {
+      return false;
+    } else if (bookingSummary.startTime === "") {
+      return false;
+    } else if (bookingSummary.date === "") {
+      return false;
+    }
+    return true && termsCheckbox && customCheckbox;
   };
 
-  
-
-
-
-  useEffect(() => {
-    console.log(checkAllRequiredFields());
-    setDisabled(checkAllRequiredFields());
-    console.log(disabled);
-    //console.log("payment", bookingSummary);
-  }, [bookingSummary]);
-
   const handleSubmit = () => {
-    if (!disabled) {
+    if (checkAllRequiredFields()) {
       navigate("/booking-confirmed");
     }
   };
 
-  const [disabled, setDisabled] = useState(true);
+  const handleTermsCheckBox = (e: React.FocusEvent<HTMLInputElement>) => {
+    setTermsCheckbox(!termsCheckbox);
+  };
+  const handleCustomCheckBox = (e: React.FocusEvent<HTMLInputElement>) => {
+    setCustomCheckbox(!customCheckbox);
+  };
 
   const handlePhoneInput = (e: React.FocusEvent<HTMLInputElement>) => {
     const phoneNumber = parseInt(e.target.value);
@@ -143,7 +148,6 @@ export default function PaymentForm() {
               className="personal-detail-item"
               placeholder="Your full address"
               required
-              // pattern="^[a-zA-Z0-9\s,'-]*$"
               title="Please enter a valid address"
               onChange={handleAddressInput}
             />
@@ -160,9 +164,21 @@ export default function PaymentForm() {
         </div>
         <div className="complete-booking">
           <div className="checkbox-section">
-            <input type="checkbox" className="checkbox" required />
+            <input
+              type="checkbox"
+              className="checkbox"
+              ref={customBookRef}
+              onChange={handleCustomCheckBox}
+              required
+            />
             <div className="checkbox-detail">Check this custom checkbox</div>
-            <input type="checkbox" className="checkbox" required />
+            <input
+              type="checkbox"
+              className="checkbox"
+              ref={termsAndConditionsRef}
+              onChange={handleTermsCheckBox}
+              required
+            />
             <div className="checkbox-detail">
               I read and agree to{" "}
               <a href="/" className="terms-condition-link">
@@ -171,12 +187,14 @@ export default function PaymentForm() {
             </div>
           </div>
 
-          <button 
+          <button
             className={
-              disabled ? "complete-booking " : "complete-booking selected"
+              checkAllRequiredFields()
+                ? "complete-booking selected"
+                : "complete-booking"
             }
+            disabled={checkAllRequiredFields()}
             onClick={() => handleSubmit()}
-            disabled={disabled}
           >
             Complete Booking
           </button>

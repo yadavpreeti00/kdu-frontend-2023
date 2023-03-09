@@ -65,6 +65,7 @@ export default function MyBookings({ signOut }: Props): JSX.Element {
               </Button>
         </div>
       </div>
+      
     </div>
   );
 }

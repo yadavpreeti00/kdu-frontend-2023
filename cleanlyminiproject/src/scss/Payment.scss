@@ -2,13 +2,10 @@
 
 .payment {
   display: grid;
-  background-color: $WHITE;
-  width: 100%;
-  padding: 1rem 1.5rem;
-  margin-top: 0rem;
-  padding-top: 0rem;
-  margin-left: 0rem;
-  padding-left: 0rem;
+  background-color: $white-color;
+
+  padding: 2em;
+  
   .horizontal-row {
     @include horizontal-rule-line-desktop;
   }
