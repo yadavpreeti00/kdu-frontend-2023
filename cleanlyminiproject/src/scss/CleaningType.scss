@@ -1,0 +1,44 @@
+@import "./mixin-constants.scss";
+
+.cleaning-types-container {
+  padding: 2em;
+  .cleaning-types-heading {
+    color: $grey-color;
+    font-size: 1em;
+    font-weight: bold;
+  }
+  .cleaning-type {
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap: 1em;
+    padding: 1em 0 1em 0em;
+    .cleaning-type-button {
+      background-color: transparent;
+      padding: 1em;
+      border-radius: 0.5em;
+      border: 0.1em solid $light-grey-color;
+    }
+    .cleaning-type-button.active {
+      background-color: transparent;
+      padding: 1em;
+      border-radius: 0.5em;
+      border: 0.1em solid $primary-color;
+    }
+
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .cleaning-types-container {
+    padding: 2em !important;
+    .cleaning-type {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr ;
+      gap: 0.5em !important;
+      width: max-content;
+      align-items: center;
+    }
+    
+  }
+  
+}

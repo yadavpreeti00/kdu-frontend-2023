@@ -1,0 +1,20 @@
+@import './mixin-constants.scss';
+
+.special-requirements-container{
+    padding:2em;
+    .special-requirements-heading{
+        padding: 1em 0em 1em 0em;
+        @include heading;
+        .optional{
+            color: $light-grey-color;
+
+        }
+    }
+    .special-requirements-text{
+
+        border: 0.1em solid $light-grey-color;
+        border-radius: 0.2em;
+        padding:3em;
+        width: 100%;
+    }
+}

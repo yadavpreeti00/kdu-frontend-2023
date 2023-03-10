@@ -1,0 +1,55 @@
+@import "./mixin-constants.scss";
+
+.cleaning-frequency-container {
+  padding: 0 2em;
+  .cleaning-frequency-heading {
+    color: $grey-color;
+    font-size: 1em;
+    font-weight: bold;
+  }
+  .cleaning-frequency {
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap: 1em;
+    padding: 1em 0 1em 0em;
+    .cleaning-frequency-button {
+      background-color: transparent;
+      padding: 1em;
+      border-radius: 0.5em;
+      border: 0.1em solid $light-grey-color;
+    }
+    .cleaning-frequency-button.active{
+      border: 0.1em solid $primary-color;
+
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+
+
+  .cleaning-frequency-container {
+    .cleaning-frequency-heading {
+      color: $grey-color;
+      font-size: 1em;
+      font-weight: bold;
+    }
+    .cleaning-frequency {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr!important;
+      gap: 4em;
+      padding: 1em 0 1em 0em;
+      width: max-content;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      .cleaning-frequency-button {
+
+        background-color: transparent;
+        padding: 1em;
+        border-radius: 0.5em;
+        border: 0.08em solid $light-grey-color;
+      }
+    }
+  }
+}

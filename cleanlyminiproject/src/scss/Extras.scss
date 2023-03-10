@@ -1,0 +1,58 @@
+@import './mixin-constants.scss';
+
+.extras-container{
+    padding:2em;
+    .extras-heading{
+        color: $grey-color;
+        font-size: 1em;
+        font-weight: bold;
+    }
+    .extras-card-container{
+        padding: 2em 0em 1em 0em;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap:0.5em;
+        .extras-card-item{
+            border: 0.1em solid $light-grey-color;
+            border-radius: 0.5em;
+            align-items: center;
+            text-align: center;
+            background-color: transparent;
+            .extras-card-image{
+                padding: 1em;
+                width: 50%;
+                height: 70%;
+
+            }
+          
+        }
+        .extras-card-item.active{
+            border: 0.1em solid $primary-color;
+
+        }
+    }
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 896px) {
+    .extras-card-container{
+        padding: 0 !important;
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap:1em;
+        width: 90vw;
+        .extras-card-item{
+            border: 0.1em solid $light-grey-color;
+            border-radius: 0.5em;
+            align-items: center;
+            text-align: center;
+            background-color: transparent;
+            .extras-card-image{
+                padding: 1em;
+                width: 50%;
+                height: 60% !important;
+
+            }
+            
+        }
+}
+}

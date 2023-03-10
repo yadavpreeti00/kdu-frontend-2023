@@ -1,0 +1,56 @@
+@import "./mixin-constants.scss";
+
+.schedule-container {
+  padding: 2em;
+  .schedule-heading {
+    @include heading-with-margin;
+  }
+  .schedule-hour-date {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4em;
+    padding: 1em 0 1em 0;
+
+    .schedule-hour-container {
+      .schedule-hour-heading {
+        @include heading;
+        margin-bottom: 1em;
+      }
+      .schedule-hour-field {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        text-align: center;
+        border: 0.1em solid $light-grey-color;
+        padding: 1em;
+        border-radius: 0.3em;
+        .hour-btn {
+          background-color: transparent;
+          border: none;
+        }
+      }
+    }
+    .schedule-date-container {
+      .schedule-date-heading {
+        @include heading;
+        margin-bottom: 1em;
+      }
+      .schedule-date-input {
+        padding: 1em;
+        border: 0.1em solid $light-grey-color;
+        border-radius: 0.3em;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .schedule-container {
+    .schedule-hour-date {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4em;
+      padding: 1em 0 1em 0;
+    }
+  }
+}

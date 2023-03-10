@@ -1,0 +1,42 @@
+@import "mixin-constants.scss";
+
+
+@import './mixin-constants.scss';
+
+.header {
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  padding: 1em;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: $white-color;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  .buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    .header-button {
+      width: 7rem;
+      height: 2rem;
+      justify-self: right;
+      background-color: $primary-color;
+      border: none;
+      border-radius: 0.5rem;
+      color: $white-color;
+      font-size: 1rem;
+
+      @media screen and (min-width: 1440px) {
+        width: 14rem;
+        height: 3rem;
+        font-size: 1.3rem;
+      }
+    }
+
+    @media screen and (min-width: 1440px) {
+      grid-template-columns: 5fr 2fr;
+    }
+  }
+}

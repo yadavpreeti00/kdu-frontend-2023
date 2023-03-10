@@ -1,0 +1,171 @@
+@import './mixin-constants.scss';
+
+.payment {
+  display: grid;
+  background-color: $white-color;
+
+  padding: 2em;
+  
+  .horizontal-row {
+    @include horizontal-rule-line-desktop;
+  }
+  .payment-heading-section {
+    display: grid;
+    align-items: center;
+    margin: 1rem 0;
+
+    .payment-heading {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $light-black-color;
+    }
+    .payment-logo-section {
+      margin-top: 1rem;
+      border: 2px solid $green;
+      display: grid;
+      grid-template-columns: 1fr 6fr;
+      place-items: center;
+      height: 3rem;
+      border-radius: 0.5rem;
+      color: $green;
+
+      .payment-logo-image {
+        width: 2rem;
+        height: 1.5rem;
+      }
+      .payment-logo-text-div {
+        justify-self: center;
+        font-size: 0.8rem;
+      }
+    }
+
+    @media screen and (min-width: 1440px) {
+      grid-template-columns: 1fr 1fr;
+      .payment-logo-section {
+        justify-self: right;
+        grid-template-columns: 1fr 4fr;
+        width: 11rem;
+      }
+    }
+  }
+
+  .booking-form {
+    display: grid;
+    gap: 1.5rem;
+
+    .card-details-section {
+      display: grid;
+      gap: 1rem;
+
+      .card-details-heading {
+        color: $light-grey-color;
+        padding: 1rem;
+        padding-left: 0rem;
+      }
+
+      .card-number {
+        @include form-input;
+        border-color: $light-grey-color;
+      }
+
+      .card-detail-combined {
+        display: grid;
+        gap: 1rem;
+
+        .card-detail-item {
+          @include form-input;
+          border-color: $light-grey-color;
+        }
+        @media screen and (min-width: 1440px) {
+          grid-template-columns: 1fr 1fr 2fr;
+        }
+      }
+    }
+
+    .personal-details-section {
+      display: grid;
+      gap: 1rem;
+      .personal-details-heading {
+        color: $light-grey-color;
+      }
+
+      .personal-digital-details {
+        display: grid;
+        gap: 1rem;
+
+        .personal-detail-item {
+          @include form-input;
+          border-color:  $light-grey-color;
+        }
+        @media screen and (min-width: 1440px) {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .personal-physical-details {
+        display: grid;
+        gap: 1rem;
+
+        .personal-detail-item {
+          @include form-input;
+          border-color:  $light-grey-color;
+        }
+        @media screen and (min-width: 1440px) {
+          grid-template-columns: 3fr 1fr;
+        }
+      }
+    }
+
+    .complete-booking {
+      display: grid;
+      place-items: center;
+      gap: 2rem;
+
+      .checkbox-section {
+        display: grid;
+        grid-template-columns: 1fr 10fr;
+        grid-row: 1fr 1fr;
+        gap: 1rem 0.5rem;
+        justify-self: left;
+        place-items: center;
+
+        .checkbox {
+          width: 1rem;
+          height: 1rem;
+          border-color: $light-black-color;
+          appearance: none;
+          outline: none;
+          border: none;
+          background-color: $light-grey-color;
+        }
+
+        .checkbox:checked {
+          background-color: $primary-color;
+        }
+
+        .checkbox-detail {
+          @include plain-text-font-style;
+          justify-self: left;
+
+          .terms-condtion-link {
+            text-decoration: none;
+            font-weight: bold;
+          }
+        }
+      }
+      .complete-booking {
+        width: 100%;
+        height: 4rem;
+        border-color:  $light-grey-color;
+        border: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 0.5rem;
+      }
+      .selected{
+        background-color: $green;
+        color : $white-color;
+      }
+    }
+  }
+}
